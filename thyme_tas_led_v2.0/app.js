@@ -116,7 +116,8 @@ function on_receive(data) {
 
 
 function control_led(comm_num){
-    var cmd = 'sudo ./led ' + comm_num;
+    // var cmd = 'sudo ./led ' + comm_num;
+    var cmd = 'python oneled';
     exec(cmd, function callback(error, stdout, stderr) {
         console.log(stdout);
     });
