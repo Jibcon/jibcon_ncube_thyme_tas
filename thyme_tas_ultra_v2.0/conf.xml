@@ -5,7 +5,7 @@
         <parentport>3105</parentport>
     </tas>
     <download>
-        <ctname>cnt-led</ctname>
-        <id>led#1</id>
+        <ctname>cnt-ultra</ctname>
+        <id>ultra#1</id>
     </download>
 </m2m:conf>

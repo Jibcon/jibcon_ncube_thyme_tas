@@ -103,7 +103,7 @@ function on_receive(data) {
                             if (download_arr[j].ctname == sink_obj.ctname) {
                                 g_down_buf = JSON.stringify({id: download_arr[i].id, con: sink_obj.con});
                                 console.log(g_down_buf + ' <----');
-                                control_led(sink_obj.con);
+                                control_ultra(sink_obj.con);
                                 break;
                             }
                         }
@@ -115,9 +115,8 @@ function on_receive(data) {
 }
 
 
-function control_led(comm_num){
-    // var cmd = 'sudo ./led ' + comm_num;
-    var cmd = 'python oneled.py ' + comm_num;
+function control_ultra(comm_num){
+    var cmd = 'python ultra2.py ' + comm_num;
     exec(cmd, function callback(error, stdout, stderr) {
         console.log(stdout);
     });
@@ -148,7 +147,7 @@ function tas_watchdog() {
         }
     }
     else if(tas_state == 'init_thing') {
-        control_led('0');
+        control_ultra('0');
         
         tas_state = 'connect';
     }
